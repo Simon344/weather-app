@@ -9,10 +9,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.get("/", function(req, res){
     res.sendFile(__dirname + "/index.html");
 })
-
+//replace APP_ID with your app ID
 app.post("/", function(req, res){
     const query = req.body.cityName;
-    const appid = "cc602649092a8ba10f4067b80cb3e127";
+    //
+    const appid = "APP_ID";
     const unit = "metric";
     const url = "https://api.openweathermap.org/data/2.5/weather?q=" + query + "&appid=" + appid + "&units=" + unit;
     https.get(url, function(response){    
